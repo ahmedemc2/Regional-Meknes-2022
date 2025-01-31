@@ -11,18 +11,28 @@ const ListeStagiaire = (props) => {
   return (
     <>
       <h1 className="text-center mt-5">Liste des stagiaires</h1>
-      <div className="container g-5 row m-auto">
+      <div className="row container justify-content-center m-auto gap-3">
         {stagiaires.map((stagiaire, index) => (
-          <div key={index} className="col-4 text-center">
-            <img className="w-25" src={stagiaire.photo} alt={stagiaire.nom} />
-            <p className="card-title">
-              Nom et prénom: {stagiaire.nom + " " + stagiaire.prenom}
-            </p>
-            <p className="card-title">Ville: {stagiaire.Ville}</p>
-            <p className="card-title">Fillière: {stagiaire.Fil}</p>
+          <div key={index} className="col-xl-3 col-lg-4 col-md-6 border">
+            <img
+              className="w-50 d-block m-auto"
+              src={stagiaire.photo}
+              alt={stagiaire.nom}
+            />
+            <div className="ps-5">
+              <p className="w-100">
+                <b>Nom et prénom:</b> {stagiaire.nom + " " + stagiaire.prenom}
+              </p>
+              <p className="w-100">
+                <b>Ville:</b> {stagiaire.Ville}
+              </p>
+              <p className="w-100">
+                <b>Fillière:</b> {stagiaire.Fil}
+              </p>
+            </div>
             <button
               onClick={() => supprimerStag(index)}
-              className="btn btn-danger m-3"
+              className="btn btn-danger m-3 d-block m-auto"
             >
               Supprimer
             </button>

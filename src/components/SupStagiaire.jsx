@@ -10,8 +10,11 @@ const SupStagiaire = (props) => {
   };
   return (
     <>
-      <h1 className="text-center mt-5">Ajouter Stagiaire</h1>
-      <form action="" className="row w-50 m-auto g-3">
+      <h1 className="text-center mt-5">Supprimer Stagiaire</h1>
+      <form
+        action=""
+        className="row col-lg-4 col-md-6 col-sm-8 m-auto g-3 container"
+      >
         <div>
           Nom:
           <input
@@ -20,7 +23,10 @@ const SupStagiaire = (props) => {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <button onClick={(e) => supprimerStg(e)} className="btn btn-danger">
+        <button
+          onClick={(e) => supprimerStg(e)}
+          className="btn btn-danger col-lg-5 col-md-8 col-sm-4 d-block m-auto mt-4"
+        >
           Supprimer Stagiaire
         </button>
       </form>

@@ -4,11 +4,12 @@ import ListeStagiaire from "./ListeStagiaire";
 const RechercheStagiaire = (props) => {
   const { stagiaires, setStagiaires } = props;
 
-  const [filtered, setFiltered] = useState(stagiaires);
+  const [filtered, setFiltered] = useState([]);
 
   const filterStagiaire = (e) => {
+    const str = e.target.value.toUpperCase();
     const newListe = stagiaires.filter((stagiaire) =>
-      stagiaire.nom.includes(e.target.value)
+      stagiaire.nom.toUpperCase().includes(str)
     );
     setFiltered(newListe);
   };
@@ -26,7 +27,9 @@ const RechercheStagiaire = (props) => {
           />
         </div>
       </form>
-      <ListeStagiaire stagiaires={filtered} setStagiaires={setStagiaires} />
+      {filtered.length > 0 && (
+        <ListeStagiaire stagiaires={filtered} setStagiaires={setStagiaires} />
+      )}
     </>
   );
 };
