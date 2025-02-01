@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ListeStagiaire = (props) => {
   const { stagiaires, setStagiaires } = props;
+  const navigate = useNavigate();
 
   const supprimerStag = (idStag) => {
     const newList = stagiaires.filter((stagiaire, index) => index !== idStag);
@@ -30,12 +32,20 @@ const ListeStagiaire = (props) => {
                 <b>Fillière:</b> {stagiaire.Fil}
               </p>
             </div>
-            <button
-              onClick={() => supprimerStag(index)}
-              className="btn btn-danger m-3 d-block m-auto"
-            >
-              Supprimer
-            </button>
+            <div>
+              <button
+                onClick={() => supprimerStag(index)}
+                className="btn btn-danger m-3"
+              >
+                Supprimer
+              </button>
+              <button
+                className="btn btn-warning m-3"
+                onClick={() => navigate(`/modifierStag/${stagiaire.nom}`)}
+              >
+                Modifier
+              </button>
+            </div>
           </div>
         ))}
       </div>

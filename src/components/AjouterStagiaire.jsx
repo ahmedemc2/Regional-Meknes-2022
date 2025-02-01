@@ -37,7 +37,7 @@ const Ajouterstagiaire = (props) => {
         onSubmit={(e) => handleSubmit(e)}
       >
         <div>
-          Nom:{" "}
+          Nom:
           <input
             type="text"
             className="form-control"
@@ -46,7 +46,7 @@ const Ajouterstagiaire = (props) => {
           />
         </div>
         <div>
-          Prénom:{" "}
+          Prénom:
           <input
             type="text"
             className="form-control"
@@ -55,7 +55,7 @@ const Ajouterstagiaire = (props) => {
           />
         </div>
         <div>
-          Fillière:{" "}
+          Fillière:
           <input
             type="text"
             className="form-control"
@@ -79,7 +79,7 @@ const Ajouterstagiaire = (props) => {
           </select>
         </div>
         <div>
-          Photo:{" "}
+          Photo:
           <input
             type="file"
             className="form-control"

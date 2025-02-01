@@ -4,12 +4,13 @@ import Ajouterstagiaire from "./components/ajouterStagiaire";
 import ListeStagiaire from "./components/ListeStagiaire";
 import RechercheStagiaire from "./components/RechercheStagiaire";
 import SupStagiaire from "./components/SupStagiaire";
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import { useState } from "react";
+import ModifierStag from "./components/modifierStagiaire";
 import Navbar from "./components/Navbar";
 import NoPage from "./components/NoPage";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import DisplayEtud from "./components/AfficherEtud";
 
 const App = () => {
   const [stagiaires, setStagiaires] = useState([
@@ -128,6 +129,7 @@ const App = () => {
     <>
       <BrowserRouter>
         <Navbar />
+        <DisplayEtud />
         <Routes>
           <Route
             path="/"
@@ -160,6 +162,15 @@ const App = () => {
             path="/chercherStag"
             element={
               <RechercheStagiaire
+                stagiaires={stagiaires}
+                setStagiaires={setStagiaires}
+              />
+            }
+          />
+          <Route
+            path="/modifierStag/:name"
+            element={
+              <ModifierStag
                 stagiaires={stagiaires}
                 setStagiaires={setStagiaires}
               />
